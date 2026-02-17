@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Client {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  dni       String   @unique
+  phone     String
+  repairs   Repair[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Repair {
+  id           String   @id @default(cuid())
+  clientId     String
+  client       Client   @relation(fields: [clientId], references: [id])
+  deviceModel  String
+  status       String   @default("PENDING")
+  problem      String
+  description  String?
+  annotation   String?
+  imei         String?
+  password     String?
+  cost         Float    @default(0)
+  price        Float    @default(0)
+  paid         Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  category    String
+  price       Float
+  stock       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  type        String
+  category    String
+  amount      Float
+  description String?
+  date        DateTime @default(now())
+  relatedId   String?
+  createdAt    DateTime @default(now())
+}

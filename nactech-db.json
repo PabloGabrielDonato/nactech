@@ -1,0 +1,70 @@
+{
+  "clients": [
+    {
+      "id": "1",
+      "firstName": "Pablo",
+      "lastName": "Donato",
+      "dni": "12345678",
+      "phone": "1122334455"
+    },
+    {
+      "id": "2",
+      "firstName": "Maria",
+      "lastName": "Gomez",
+      "dni": "87654321",
+      "phone": "9988776655"
+    }
+  ],
+  "repairs": [
+    {
+      "id": "REP-001",
+      "clientId": "1",
+      "clientName": "Pablo Donato",
+      "device": "iPhone 15 Pro",
+      "status": "IN_PROGRESS",
+      "problem": "Cambio de módulo",
+      "price": 11000,
+      "cost": 45000,
+      "imei": "351234567890123",
+      "password": "1234",
+      "createdAt": "2026-02-17T14:43:54.182Z"
+    },
+    {
+      "clientName": "Cliente Demo",
+      "device": "iPhone 11 Pro Max",
+      "status": "PENDING",
+      "problem": "ujthnghndfhn",
+      "price": 123123,
+      "imei": "",
+      "password": "",
+      "id": "REP-6801",
+      "createdAt": "2026-02-17T14:43:54.215Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "P-001",
+      "name": "Funda Silicona iPhone 15 Pro",
+      "category": "Fundas",
+      "price": 15000,
+      "stock": 12
+    },
+    {
+      "id": "P-002",
+      "name": "Cargador 20W Original",
+      "category": "Cargadores",
+      "price": 45000,
+      "stock": 5
+    }
+  ],
+  "transactions": [
+    {
+      "id": "T-001",
+      "type": "INCOME",
+      "category": "REPAIR",
+      "description": "Reparación iPhone 15 Pro",
+      "amount": 120000,
+      "date": "2026-02-17T14:43:54.182Z"
+    }
+  ]
+}
